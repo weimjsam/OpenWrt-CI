@@ -14,4 +14,4 @@
 ### 点这右上角 ✰Star  变成 ★Unstar 即可开始编译
 
 ### 等待编译成功后，到Actions里下载固件即可
-### yam克隆于 https://github.com/lgs2007m/Actions-OpenWrt
+### yml克隆于 https://github.com/lgs2007m/Actions-OpenWrt
