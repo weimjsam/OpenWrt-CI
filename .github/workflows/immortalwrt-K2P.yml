@@ -17,8 +17,7 @@ on:
 #    - cron: 0 16 * * *
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: mt7621
+  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: immortalwrt/K2P/.config
   DIY_P1_SH: immortalwrt/K2P/diy-part1.sh
@@ -55,7 +54,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
          
     - name: 加载feeds.conf.default & DIY_P1_SH
