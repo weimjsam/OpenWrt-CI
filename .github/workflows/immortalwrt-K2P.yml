@@ -7,7 +7,6 @@
 # https://github.com/P3TERX/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
 #
-###############改名字##############
 name: immortalwrt-K2P
 
 on:
@@ -26,8 +25,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  ###############改名字##############
-  OPENWRT_NAME: immortalwrt-K2P
+  OPENWRT_NAME: immortalwrt
 
 jobs:
   build:
@@ -61,7 +59,8 @@ jobs:
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF /opt/openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        mv $GITHUB_WORKSPACE/$DIY_P1_SH /opt/openwrt/diy-part1.sh
+        ./diy-part1.sh
         
     - name: 更新 & 安装 feeds
       run: |
@@ -74,7 +73,8 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE /opt/openwrt/.config
         chmod +x $DIY_P2_SH
         cd /opt/openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+        mv $GITHUB_WORKSPACE/$DIY_P2_SH /opt/openwrt/diy-part2.sh
+        ./diy-part2.sh
 
     - name: 下载安装包
       id: package
