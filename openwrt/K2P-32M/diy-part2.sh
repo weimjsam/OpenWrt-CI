@@ -10,8 +10,14 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+###### Modify default IP
+#sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
+
+###### Modify hostname
+sed -i 's/OpenWrt/OpenWrt_K2P-32M/g' package/base-files/files/bin/config_generate
+
+####### Set argon as default theme
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 ##-----------------Add OpenClash dev core------------------
 #curl -sL -m 30 --retry 2 https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-mipsle-softfloat.tar.gz -o /tmp/clash.tar.gz
 #tar zxvf /tmp/clash.tar.gz -C /tmp >/dev/null 2>&1
