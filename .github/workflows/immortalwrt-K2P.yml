@@ -21,7 +21,6 @@ env:
   CONFIG_FILE: immortalwrt/K2P/.config
   DIY_P1_SH: immortalwrt/K2P/diy-part1.sh
   DIY_P2_SH: immortalwrt/K2P/diy-part2.sh
-  SSH_ACTIONS: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
