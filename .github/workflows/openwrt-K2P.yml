@@ -59,7 +59,7 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         mv $GITHUB_WORKSPACE/$DIY_P1_SH /opt/openwrt/diy-part1.sh
-        ./diy-part1.sh
+        /opt/openwrt/diy-part1.sh
         
     - name: 更新 & 安装 feeds
       run: |
@@ -73,7 +73,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd /opt/openwrt
         mv $GITHUB_WORKSPACE/$DIY_P2_SH /opt/openwrt/diy-part2.sh
-        ./diy-part2.sh
+        /opt/openwrt/diy-part2.sh
 
     - name: 下载安装包
       id: package
