@@ -27,8 +27,8 @@ sed -i 's/15744k/32448k/g' /opt/openwrt/target/linux/ramips/image/mt7621.mk
 #echo 'src-git OpenClash https://github.com/vernesong/OpenClash.git' >> 'feeds.conf.default'
 ##### Replace with JerryKuKu’s Argon
 #rm openwrt/package/lean/luci-theme-argon -rf #delete original argon theme
-#echo 'src-git ArgonTheme https://github.com/jerrykuku/luci-theme-argon.git' >> 'feeds.conf.default' #repleace with JerryKuKu’s Argon Theme
-#echo 'src-git ArgonThemeConfig https://github.com/jerrykuku/luci-app-argon-config.git' >> 'feeds.conf.default' #add JerryKuKu’s Argon Config Feature
+echo 'src-git ArgonTheme https://github.com/jerrykuku/luci-theme-argon.git' >> 'feeds.conf.default' #repleace with JerryKuKu’s Argon Theme
+echo 'src-git ArgonThemeConfig https://github.com/jerrykuku/luci-app-argon-config.git' >> 'feeds.conf.default' #add JerryKuKu’s Argon Config Feature
 #cd package/lean  
 ##### rm -rf luci-theme-argon  #删除原Argon主题
 #git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git  #加入JerryKuKu’s Argon
