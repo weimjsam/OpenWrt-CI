@@ -19,9 +19,9 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: immortalwrt/K2P/.config
-  DIY_P1_SH: immortalwrt/K2P/diy-part1.sh
-  DIY_P2_SH: immortalwrt/K2P/diy-part2.sh
+  CONFIG_FILE: immortalwrt/WR1200JS/.config
+  DIY_P1_SH: immortalwrt/WR1200JS/diy-part1.sh
+  DIY_P2_SH: immortalwrt/WR1200JS/diy-part2.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
