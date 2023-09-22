@@ -22,3 +22,4 @@
 
 ### 等待编译成功后，到Actions里下载固件即可
 ### yml克隆于 https://github.com/lgs2007m/Actions-OpenWrt
+### 插件仓库 https://github.com/kenzok8/openwrt-packages
