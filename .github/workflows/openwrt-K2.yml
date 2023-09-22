@@ -73,9 +73,6 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE /opt/openwrt/.config
         chmod +x $DIY_P2_SH
         cd /opt/openwrt
-        grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
-        echo DEVICE_NAME=$DEVICE_NAME
-        cat .config
         mv $GITHUB_WORKSPACE/$DIY_P2_SH /opt/openwrt/diy-part2.sh
         /opt/openwrt/diy-part2.sh
 
@@ -95,8 +92,7 @@ jobs:
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
-        [ -s DEVICE_NAME ] && echo "DEVICE_NAME=$(cat DEVICE_NAME)" >> $GITHUB_ENV
-        [ ! -s DEVICE_NAME ] && echo "DEVICE_NAME=phicomm_psg1218a" >> $GITHUB_ENV
+        [ -s DEVICE_NAME ] && echo "DEVICE_NAME=phicomm_psg1218a" >> $GITHUB_ENV
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*TARGET_.*_(.*)_DEVICE_.*=y/\1/' > TARGET_NAME
         [ -s TARGET_NAME ] && echo "TARGET_NAME=$(cat TARGET_NAME)" >> $GITHUB_ENV
         echo "FILE_DATE=$(date +"%Y.%m.%d")" >> $GITHUB_ENV
@@ -121,7 +117,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: ${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-${{ env.DEVICE_NAME }}
+        name: ${{ env.FILE_DATE }}-${{ env.OPENWRT_NAME }}-phicomm_psg1218a
         path: ${{ env.FIRMWARE }}
 
     - name: 生成release标签
