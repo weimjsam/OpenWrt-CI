@@ -13,7 +13,7 @@
 
 ### 点这右上角 ✰Star  变成 ★Unstar 即可开始编译
 
-### 默认登陆IP 192.168.1.1 密码 password
+### 默认登陆IP 192.168.1.1 账户密码详见以上官方源码默认
 
 ### 等待编译成功后，到Actions里下载固件即可
 ### yml克隆于 https://github.com/lgs2007m/Actions-OpenWrt
