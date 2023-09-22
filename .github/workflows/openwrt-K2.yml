@@ -73,6 +73,9 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE /opt/openwrt/.config
         chmod +x $DIY_P2_SH
         cd /opt/openwrt
+        grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
+        echo DEVICE_NAME=$DEVICE_NAME
+        cat .config
         mv $GITHUB_WORKSPACE/$DIY_P2_SH /opt/openwrt/diy-part2.sh
         /opt/openwrt/diy-part2.sh
 
