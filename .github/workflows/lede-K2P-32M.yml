@@ -56,7 +56,7 @@ jobs:
          
     - name: 加载feeds.conf.default & DIY_P1_SH
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF /opt/openwrt/feeds.conf.default
+        #[ -e $FEEDS_CONF ] && mv $FEEDS_CONF /opt/openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         mv $GITHUB_WORKSPACE/$DIY_P1_SH /opt/openwrt/diy-part1.sh
